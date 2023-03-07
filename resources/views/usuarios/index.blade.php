@@ -39,7 +39,7 @@
                             </a>
                         </td>
                         <td>
-                            <form action="{{route('user.destroy', $usuario->id)}}" method="" class="ms-2">
+                            <form action="{{route('user.destroy', $usuario->id)}}" method="POST" class="ms-2">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm">
