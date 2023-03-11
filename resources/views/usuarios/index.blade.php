@@ -35,7 +35,7 @@
                         <td> {{$usuario->cpf}}</td>
                         <td>  
                             <a href="{{route('user.edit', $usuario->id)}}" class="btn btn-primary btn-sm">
-                                E
+                                <i class="fa-sharp fa-solid fa-pencil"></i>
                             </a>
                         </td>
                         <td>
@@ -43,7 +43,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm">
-                                    X
+                                    <i class="fa-sharp fa-solid fa-trash"></i>
                                 </button>
                             </form>
                         </td>
@@ -60,4 +60,5 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+    <script src="https://kit.fontawesome.com/333552c370.js" crossorigin="anonymous"></script>
 @stop

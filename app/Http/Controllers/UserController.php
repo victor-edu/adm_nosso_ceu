@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user= User::query()->get();
+        $user= User::all();
         return view('usuarios.index')->with('user', $user);
     }
     public function create()
@@ -34,12 +34,12 @@ class UserController extends Controller
     public function store(UserFormRequest $request)
     {
         $user=User::create($request->all());
-        return to_route('user.index');
+        return to_route('admin.index');
     }
     public function destroy(User $user)
     {
         $user->delete();
-        return to_route('user.index');
+        return to_route('admin.index');
     }
     public function edit(User $user)
     {   
@@ -51,7 +51,12 @@ class UserController extends Controller
         $user->fill($request->all());
         $user->save();
 
-        return to_route('user.index');
+        return to_route('admin.index');
+    }
+
+    public function home()
+    {
+        return view('usuarios.create');
     }
     
 }

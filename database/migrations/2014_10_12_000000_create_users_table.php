@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Perfil;
 
 return new class extends Migration
 {
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->string('complemento')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('perfil_id')->nullable();
+            $table->foreignIdFor(Perfil::class);
             $table->rememberToken();
             $table->timestamps();
         });
